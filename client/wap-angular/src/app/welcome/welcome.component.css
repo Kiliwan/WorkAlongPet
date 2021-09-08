@@ -1,0 +1,35 @@
+.mainBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+.titleBlock {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 30px;
+    text-align: center;
+}
+.rulesBlock {
+    margin: 30px;
+    text-align: center;
+}
+.welcomeBlock {
+    margin: 30px;
+}
+.taskBlock {
+    margin: 30px;
+}
+.taskList {
+    margin: 10px;
+}
+.buttonStart {
+    margin: 30px;
+    align-self: center;
+    padding: 50px;
+}
+.buttonTask {
+    margin: 30px 150px;
+    align-self: center;
+    padding: 10px;
+}

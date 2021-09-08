@@ -1,0 +1,123 @@
+<div class="game">
+  <canvas
+    #wap
+    width="900"
+    height="500">
+  </canvas>
+</div>
+<div class="extras">
+  <div class="chat">
+    <div class="chat-container" *ngFor="let message of messages">
+      {{message}}
+    </div>
+    <div class="chat-new-container">
+      <form [formGroup]="chatForm" (ngSubmit)="sendMessage()">
+        <input id="message" type="text" formControlName="message">
+        <button class="chat-send" [disabled]="!chatForm.valid">Send</button>
+      </form>
+    </div>
+  </div>
+  <div class="tasks">
+    <div class="tasksTitle">
+      To-Do List
+    </div>
+    <div *ngFor="let task of taskList">
+      {{task.title}}
+      <button (click)="taskDone(task)">Done !</button>
+    </div>
+  </div>
+  <div class="pet">
+    <div class="petTitle">
+      HELTH
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div style="display:none;">
+  <img id="dog_left_1" src="assets/dog_left_1.png" >
+  <img id="dog_left_2" src="assets/dog_left_2.png" >
+  <img id="dog_right_1" src="assets/dog_right_1.png" >
+  <img id="dog_right_2" src="assets/dog_right_2.png" >
+  <img id="dog_up_1" src="assets/dog_up_1.png" >
+  <img id="dog_up_2" src="assets/dog_up_2.png" >
+  <img id="dog_down_1" src="assets/dog_down_1.png" >
+  <img id="dog_down_2" src="assets/dog_down_2.png" >
+
+  <img id="drako_left_1" src="assets/drako_left_1.png" >
+  <img id="drako_left_2" src="assets/drako_left_2.png" >
+  <img id="drako_right_1" src="assets/drako_right_1.png" >
+  <img id="drako_right_2" src="assets/drako_right_2.png" >
+  <img id="drako_up_1" src="assets/drako_up_1.png" >
+  <img id="drako_up_2" src="assets/drako_up_2.png" >
+  <img id="drako_down_1" src="assets/drako_down_1.png" >
+  <img id="drako_down_2" src="assets/drako_down_2.png" >
+
+  <img id="ghost_left_1" src="assets/ghost_left_1.png" >
+  <img id="ghost_left_2" src="assets/ghost_left_2.png" >
+  <img id="ghost_right_1" src="assets/ghost_right_1.png" >
+  <img id="ghost_right_2" src="assets/ghost_right_2.png" >
+  <img id="ghost_up_1" src="assets/ghost_up_1.png" >
+  <img id="ghost_up_2" src="assets/ghost_up_2.png" >
+  <img id="ghost_down_1" src="assets/ghost_down_1.png" >
+  <img id="ghost_down_2" src="assets/ghost_down_2.png" >
+
+  <img id="kitty_left_1" src="assets/kitty_left_1.png" >
+  <img id="kitty_left_2" src="assets/kitty_left_2.png" >
+  <img id="kitty_right_1" src="assets/kitty_right_1.png" >
+  <img id="kitty_right_2" src="assets/kitty_right_2.png" >
+  <img id="kitty_up_1" src="assets/kitty_up_1.png" >
+  <img id="kitty_up_2" src="assets/kitty_up_2.png" >
+  <img id="kitty_down_1" src="assets/kitty_down_1.png" >
+  <img id="kitty_down_2" src="assets/kitty_down_2.png" >
+
+  <img id="pika_left_1" src="assets/pika_left_1.png" >
+  <img id="pika_left_2" src="assets/pika_left_2.png" >
+  <img id="pika_right_1" src="assets/pika_right_1.png" >
+  <img id="pika_right_2" src="assets/pika_right_2.png" >
+  <img id="pika_up_1" src="assets/pika_up_1.png" >
+  <img id="pika_up_2" src="assets/pika_up_2.png" >
+  <img id="pika_down_1" src="assets/pika_down_1.png" >
+  <img id="pika_down_2" src="assets/pika_down_2.png" >
+
+  <img id="sheep_left_1" src="assets/sheep_left_1.png" >
+  <img id="sheep_left_2" src="assets/sheep_left_2.png" >
+  <img id="sheep_right_1" src="assets/sheep_right_1.png" >
+  <img id="sheep_right_2" src="assets/sheep_right_2.png" >
+  <img id="sheep_up_1" src="assets/sheep_up_1.png" >
+  <img id="sheep_up_2" src="assets/sheep_up_2.png" >
+  <img id="sheep_down_1" src="assets/sheep_down_1.png" >
+  <img id="sheep_down_2" src="assets/sheep_down_2.png" >
+
+
+  <img id="boi_left_1" src="assets/boi_left_1.png" >
+  <img id="boi_left_2" src="assets/boi_left_2.png" > 
+  <img id="boi_left_3" src="assets/boi_left_3.png" >
+  <img id="boi_right_1" src="assets/boi_right_1.png" >
+  <img id="boi_right_2" src="assets/boi_right_2.png" >
+  <img id="boi_right_3" src="assets/boi_right_3.png" >
+  <img id="boi_up_1" src="assets/boi_up_1.png" >
+  <img id="boi_up_2" src="assets/boi_up_2.png" >
+  <img id="boi_up_3" src="assets/boi_up_3.png" >
+  <img id="boi_down_1" src="assets/boi_down_1.png" >
+  <img id="boi_down_2" src="assets/boi_down_2.png" >
+  <img id="boi_down_3" src="assets/boi_down_3.png" >
+
+  <img id="boi2_left_1" src="assets/boi2_left_1.png" >
+  <img id="boi2_left_2" src="assets/boi2_left_2.png" > 
+  <img id="boi2_left_3" src="assets/boi2_left_3.png" >
+  <img id="boi2_right_1" src="assets/boi2_right_1.png" >
+  <img id="boi2_right_2" src="assets/boi2_right_2.png" >
+  <img id="boi2_right_3" src="assets/boi2_right_3.png" >
+  <img id="boi2_up_1" src="assets/boi2_up_1.png" >
+  <img id="boi2_up_2" src="assets/boi2_up_2.png" >
+  <img id="boi2_up_3" src="assets/boi2_up_3.png" >
+  <img id="boi2_down_1" src="assets/boi2_down_1.png" >
+  <img id="boi2_down_2" src="assets/boi2_down_2.png" >
+  <img id="boi2_down_3" src="assets/boi2_down_3.png" >
+
+</div>

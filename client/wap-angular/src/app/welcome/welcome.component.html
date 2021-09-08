@@ -1,0 +1,71 @@
+<div class="mainBlock">
+    <div class="titleBlock">
+        Welcome to WorkAlong Pet (WAP for short)
+    </div>
+    <div class="rulesBlock">
+        The online-educationnal-social-wholesome experience.
+        <br>
+        Please choose your name,avatar, your pet and its name. Then, if you want to, enter the tasks that you want to do today.
+    </div>
+    <div class="welcomeBlock">
+            <form [formGroup]="welcomeForm" (ngSubmit)="onSubmit()">
+                <div>
+                    <label for="name">Name  </label>
+                    <input id="name" type="text" formControlName="name">
+                </div>
+                <div>
+                    <label for="type">Avatar type   </label>
+                    <input id="type" type="radio" value="boi1" formControlName="type">
+                    <input id="type" type="radio" value="boi2" formControlName="type">
+                </div>
+                <div>
+                    <label for="wapName">Pet name   </label>
+                    <input id="wapName" type="text" formControlName="wapName">
+                </div>
+                <div>
+                    <label for="wapType">Pet type   </label>
+                    <input id="wapType" type="radio" value="dog" formControlName="wapType">
+                    <input id="wapType" type="radio" value="cat" formControlName="wapType">
+                    <input id="wapType" type="radio" value="sheep" formControlName="wapType">
+                    <input id="wapType" type="radio" value="pikachu" formControlName="wapType">
+                    <input id="wapType" type="radio" value="ghost" formControlName="wapType">
+                    <input id="wapType" type="radio" value="drako" formControlName="wapType">
+                </div>
+                <button class="buttonStart" type="submit" [disabled]="!welcomeForm.valid">Enter the game</button>
+            </form>
+            <div class="images">
+                <img width="40px" height="50px" id="boi_down_1" src="assets/boi_down_1.png" [hidden]="this.welcomeForm.get('type').value!='boi1'">
+                <img width="40px" height="50px" id="boi_down_2" src="assets/boi2_down_1.png" [hidden]="this.welcomeForm.get('type').value!='boi2'">
+                <img width="40px" height="50px" id="dog_down_1" src="assets/dog_down_1.png" [hidden]="this.welcomeForm.get('wapType').value!='dog'">
+                <img width="40px" height="50px"  id="dog_down_1" src="assets/kitty_down_1.png" [hidden]="this.welcomeForm.get('wapType').value!='cat'">
+                <img width="40px" height="50px"  id="dog_down_1" src="assets/ghost_down_1.png" [hidden]="this.welcomeForm.get('wapType').value!='ghost'">
+                <img width="40px" height="50px"  id="dog_down_1" src="assets/drako_down_1.png" [hidden]="this.welcomeForm.get('wapType').value!='drako'">
+                <img width="40px" height="50px"  id="dog_down_1" src="assets/sheep_down_1.png" [hidden]="this.welcomeForm.get('wapType').value!='sheep'">
+                <img width="40px" height="50px"  id="dog_down_1" src="assets/pika_down_1.png" [hidden]="this.welcomeForm.get('wapType').value!='pikachu'">
+            </div>
+    </div>
+    <br>
+    -----------------------------------------------------------------------------------
+    <br>
+    <div class="taskBlock">
+        <div class="taskList" *ngFor="let task of taskList">
+            {{task.title}} | {{task.urgency}}
+            <button (click)="removeTask(task)">Remove task</button>
+        </div>
+        <form class="taskForm" [formGroup]="taskForm" (ngSubmit)="addTask()">
+            <div>
+                <label for="newTaskTitle">Enter a new task  </label>
+                <input id="newTaskTitle" type=text formControlName="newTaskTitle">
+            </div>
+            <div>
+                <label for="newTaskUrgency">How important is the task ? (less to most)  </label>
+                <input id="1" type="radio" value=1 formControlName="newTaskUrgency">
+                <input id="2" type="radio" value=2 formControlName="newTaskUrgency">
+                <input id="3" type="radio" value=3 formControlName="newTaskUrgency">
+                <input id="4" type="radio" value=4 formControlName="newTaskUrgency">
+                <input id="5" type="radio" value=5 formControlName="newTaskUrgency">
+            </div>
+            <button class="buttonTask" type="submit" [disabled]="!taskForm.valid">Add task</button>
+        </form>
+    </div>
+</div>

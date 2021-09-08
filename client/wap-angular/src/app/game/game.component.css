@@ -1,0 +1,41 @@
+.game {
+    border: 5px solid black;
+    border-radius: 25px;
+    max-width: 900px;
+    max-height: 500px;
+}
+.extras {
+    display: flex;
+    flex-direction: row;
+    height: 45%;
+}
+.chat {
+    width: 40%;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.chat-container {
+
+}
+.chat-new-container {
+    margin: 5px;
+    position: absolute;
+    bottom: 30px;
+}
+.tasks {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+}
+.tasksTitle {
+    font-size: larger;
+}
+.pet {
+    width: 30%;
+    margin: 10px;
+    text-align: center;
+}
+.petTitle {
+    font-size: larger;
+}
